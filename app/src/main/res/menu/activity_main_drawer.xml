@@ -4,16 +4,12 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_single_account"
+            android:id="@+id/nav_leanlaps"
             android:icon="@drawable/ic_single_account_24dp"
-            android:title="Single Account Mode" />
+            android:title="LeanLaps" />
         <item
-            android:id="@+id/nav_multiple_account"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/ic_multiple_account_24dp"
-            android:title="Multiple Account Mode" />
-        <item
-            android:id="@+id/nav_b2c"
-            android:icon="@drawable/ic_multiple_account_24dp"
-            android:title="B2C Mode" />
+            android:title="Settings" />
     </group>
 </menu>

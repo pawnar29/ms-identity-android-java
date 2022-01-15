@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity
         OnFragmentInteractionListener{
 
     enum AppFragment {
-        SingleAccount,
-        MultipleAccount,
-        B2C
+        LeanLaps,
+        settings
     }
 
     private AppFragment mCurrentFragment;
@@ -74,8 +73,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //Set default fragment
-        navigationView.setCheckedItem(R.id.nav_single_account);
-        setCurrentFragment(AppFragment.SingleAccount);
+        navigationView.setCheckedItem(R.id.nav_leanlaps);
+        setCurrentFragment(AppFragment.LeanLaps);
     }
 
     @Override
@@ -93,16 +92,12 @@ public class MainActivity extends AppCompatActivity
                 // Handle navigation view item clicks here.
                 int id = item.getItemId();
 
-                if (id == R.id.nav_single_account) {
-                    setCurrentFragment(AppFragment.SingleAccount);
+                if (id == R.id.nav_leanlaps) {
+                    setCurrentFragment(AppFragment.LeanLaps);
                 }
 
-                if (id == R.id.nav_multiple_account) {
-                    setCurrentFragment(AppFragment.MultipleAccount);
-                }
-
-                if (id == R.id.nav_b2c) {
-                    setCurrentFragment(AppFragment.B2C);
+                if (id == R.id.nav_settings) {
+                    setCurrentFragment(AppFragment.settings);
                 }
 
                 drawer.removeDrawerListener(this);
@@ -128,33 +123,25 @@ public class MainActivity extends AppCompatActivity
 
     private void setHeaderString(final AppFragment fragment){
         switch (fragment) {
-            case SingleAccount:
-                getSupportActionBar().setTitle("Single Account Mode");
+            case LeanLaps:
+                getSupportActionBar().setTitle("LeanLaps");
                 return;
 
-            case MultipleAccount:
-                getSupportActionBar().setTitle("Multiple Account Mode");
-                return;
-
-            case B2C:
-                getSupportActionBar().setTitle("B2C Mode");
+            case settings:
+                getSupportActionBar().setTitle("Settings");
                 return;
         }
     }
 
     private void displayFragment(final AppFragment fragment){
         switch (fragment) {
-            case SingleAccount:
-                attachFragment(new SingleAccountModeFragment());
+            case LeanLaps:
+                attachFragment(new LeanLaps());
                 return;
 
-            case MultipleAccount:
-                attachFragment(new MultipleAccountModeFragment());
-                return;
-
-            case B2C:
-                attachFragment(new B2CModeFragment());
-                return;
+//            case settings:
+//                attachFragment(new settingsModeFragment());
+//                return;
         }
     }
 

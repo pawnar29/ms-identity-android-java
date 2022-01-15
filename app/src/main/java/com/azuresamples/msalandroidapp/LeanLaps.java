@@ -62,8 +62,8 @@ import org.json.JSONObject;
  * <p>
  * Please note that switching mode (between 'single' and 'multiple' might cause a loss of data.
  */
-public class SingleAccountModeFragment extends Fragment {
-    private static final String TAG = SingleAccountModeFragment.class.getSimpleName();
+public class LeanLaps extends Fragment {
+    private static final String TAG = LeanLaps.class.getSimpleName();
 
     /* UI & Debugging Variables */
     Button signInButton;
